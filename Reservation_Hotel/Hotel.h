@@ -23,4 +23,5 @@ public:
     void ajouterChambre(const Chambre& chambre);
     void supprimerChambre(int numero);
 
+    friend std::ostream& operator<<(std::ostream& os, const Hotel& h);
 };

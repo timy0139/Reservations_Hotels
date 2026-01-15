@@ -14,4 +14,6 @@ public:
     std::string getId() const;
     std::string getNom() const;
     std::string getPrenom() const;
+
+    friend std::ostream& operator<<(std::ostream& os, const Client& c);
 };

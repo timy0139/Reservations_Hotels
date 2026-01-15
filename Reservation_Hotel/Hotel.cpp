@@ -38,3 +38,16 @@ void Hotel::supprimerChambre(int numero)
 		}
 	}
 }
+
+std::ostream& operator<<(std::ostream& os, const Hotel& h)
+{
+	os << "Hotel" << h.id_
+		<< h.nom_ << ", " << h.ville_ << "\n";
+	os << "Liste des chambres :\n";
+
+	for (const Chambre& c : h.chambre_) {
+		os << "  - " << c << "\n";
+	}
+
+	return os;
+}

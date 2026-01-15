@@ -16,4 +16,6 @@ public:
     int getPrix() const;
     void setPrix(int prix);
 
+    friend std::ostream& operator<<(std::ostream& os, const Chambre& c);
+
 };

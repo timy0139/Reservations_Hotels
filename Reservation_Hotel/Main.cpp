@@ -52,4 +52,9 @@ int main() {
 
 	for (int i = 9; i <= 10; i++)
 		h.ajouterChambre(Chambre(100 + i, "Suite", 210));
+
+	Client c("Patate", "Millet", "Thomas");
+	std::cout << c << std::endl;
+
+	std::cout << h << std::endl;
 }

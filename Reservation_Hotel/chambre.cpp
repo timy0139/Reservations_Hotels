@@ -24,3 +24,11 @@ void Chambre::setPrix(int prix)
 {
     prix_ = prix;
 }
+
+std::ostream& operator<<(std::ostream& os, const Chambre& c)
+{
+    os << "Chambre " << c.getNumero()
+        << " , " << c.getType()
+        << " , " << c.getPrix();
+    return os;
+}
