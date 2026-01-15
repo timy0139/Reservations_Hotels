@@ -24,6 +24,16 @@ int main() {
 	std::cout << h.getId() << " " << h.getNom() << " " << h.getVille() << std::endl;
 	h.supprimerChambre(1);
 
-	int nuit = 3;
-	Reservation r(d1, nuit, h.getId(), chambre.getNumero(), c.getId(), 0);
+	Reservation r(d1, 3, h.getId(), chambre.getNumero(), c.getId(), 0);
+	std::cout << "Client: " << r.getIdClient() << std::endl;
+	std::cout << "Hôtel: " << r.getIdHotel() << std::endl;
+	std::cout << "Chambre: " << r.getIdChambre() << std::endl;
+	std::cout << "Nombre de nuits: " << r.getNombreNuits() << std::endl;
+	std::cout << "Montant total: " << r.getMontantTotal() << std::endl;
+	r.modifierSejour(d1, 5);
+	std::cout << "Client: " << r.getIdClient() << std::endl;
+	std::cout << "Hôtel: " << r.getIdHotel() << std::endl;
+	std::cout << "Chambre: " << r.getIdChambre() << std::endl;
+	std::cout << "Nombre de nuits: " << r.getNombreNuits() << std::endl;
+	std::cout << "Montant total: " << r.getMontantTotal() << std::endl;
 }

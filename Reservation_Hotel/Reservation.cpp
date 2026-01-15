@@ -36,3 +36,11 @@ int Reservation::getMontantTotal() const
 	return montantTotal_;
 }
 
+void Reservation::modifierSejour(Date nouvelleDate, int nouvellesNuits)
+{
+	if (nouvellesNuits > 0) {
+		dateDebut_ = nouvelleDate;
+		nbNuits_ = nouvellesNuits;
+	}
+}
+

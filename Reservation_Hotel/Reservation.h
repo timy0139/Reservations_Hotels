@@ -20,4 +20,5 @@ public:
     std::string getIdClient() const;
     int getMontantTotal() const;
 
+    void modifierSejour(Date nouvelleDate, int nouvellesNuits);
 };
