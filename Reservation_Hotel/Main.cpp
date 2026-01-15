@@ -3,6 +3,7 @@
 #include "client.h"
 #include "chambre.h"
 #include "hotel.h"
+#include "Reservation.h"
 
 int main() {
 	std::cout << "hello" << std::endl ;
@@ -23,4 +24,6 @@ int main() {
 	std::cout << h.getId() << " " << h.getNom() << " " << h.getVille() << std::endl;
 	h.supprimerChambre(1);
 
+	int nuit = 3;
+	Reservation r(d1, nuit, h.getId(), chambre.getNumero(), c.getId(), 0);
 }
