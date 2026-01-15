@@ -21,4 +21,5 @@ public:
     int getMontantTotal() const;
 
     void modifierSejour(Date nouvelleDate, int nouvellesNuits);
+    int calculerMontantTotal(int nbNuits, double prix);
 };
