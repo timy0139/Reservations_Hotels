@@ -19,3 +19,8 @@ int Chambre::getPrix() const
 {
     return prix_;
 }
+
+void Chambre::setPrix(int prix)
+{
+    prix_ = prix;
+}

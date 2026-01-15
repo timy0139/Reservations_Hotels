@@ -14,5 +14,6 @@ public:
     int getNumero() const;
     std::string getType() const;
     int getPrix() const;
+    void setPrix(int prix);
 
 };

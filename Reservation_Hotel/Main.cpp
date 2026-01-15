@@ -14,4 +14,8 @@ int main() {
 
 	Chambre chambre(101, "Single", 100);
 	std::cout << chambre.getNumero() << " " << chambre.getType() << " " << chambre.getPrix() << std::endl;
+	chambre.setPrix(200);
+	std::cout << chambre.getNumero() << " " << chambre.getType() << " " << chambre.getPrix() << std::endl;
+
+
 }
