@@ -126,12 +126,14 @@
     <ClCompile Include="chambre.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Date.cpp" />
+    <ClCompile Include="Hotel.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chambre.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Date.h" />
+    <ClInclude Include="Hotel.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

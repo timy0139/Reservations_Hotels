@@ -2,6 +2,7 @@
 #include "date.h"
 #include "client.h"
 #include "chambre.h"
+#include "hotel.h"
 
 int main() {
 	std::cout << "hello" << std::endl ;
@@ -17,5 +18,9 @@ int main() {
 	chambre.setPrix(200);
 	std::cout << chambre.getNumero() << " " << chambre.getType() << " " << chambre.getPrix() << std::endl;
 
+	Hotel h("lion", "Bouchon", "Lyon");
+	h.ajouterChambre(Chambre(101, "Single", 100));
+	std::cout << h.getId() << " " << h.getNom() << " " << h.getVille() << std::endl;
+	h.supprimerChambre(1);
 
 }
