@@ -20,5 +20,7 @@ public:
 
     std::vector<Chambre>& getChambres();
 
+    void ajouterChambre(const Chambre& chambre);
+    void supprimerChambre(int numero);
 
 };

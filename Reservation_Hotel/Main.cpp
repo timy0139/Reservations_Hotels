@@ -19,6 +19,8 @@ int main() {
 	std::cout << chambre.getNumero() << " " << chambre.getType() << " " << chambre.getPrix() << std::endl;
 
 	Hotel h("lion", "Bouchon", "Lyon");
+	h.ajouterChambre(Chambre(101, "Single", 100));
 	std::cout << h.getId() << " " << h.getNom() << " " << h.getVille() << std::endl;
+	h.supprimerChambre(1);
 
 }

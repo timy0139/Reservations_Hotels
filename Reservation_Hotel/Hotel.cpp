@@ -24,3 +24,17 @@ std::vector<Chambre>& Hotel::getChambres()
 {
 	return chambre_;
 }
+
+void Hotel::ajouterChambre(const Chambre& chambre)
+{
+	chambre_.push_back(chambre);
+}
+
+void Hotel::supprimerChambre(int numero)
+{
+	for (auto i = 0; i < chambre_.size(); i++) {
+		if (chambre_[i].getNumero() == numero) {
+			chambre_.erase(chambre_.begin() + i);
+		}
+	}
+}
