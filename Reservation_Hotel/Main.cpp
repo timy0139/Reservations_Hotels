@@ -2,8 +2,8 @@
 #include "date.h"
 #include "client.h"
 #include "chambre.h"
-#include "hotel.h"
 #include "Reservation.h"
+#include "hotel.h"
 
 int main() {
 	//Partie 1
@@ -45,13 +45,13 @@ int main() {
 	Hotel h("président", "animal", "Paris");
 
 	for (int i = 1; i <= 3; i++)
-		h.ajouterChambre(Chambre(100 + i, "Single", 100));
+		h.ajouterChambre(Chambre(i, "Single", 100));
 
 	for (int i = 4; i <= 8; i++)
-		h.ajouterChambre(Chambre(100 + i, "Double", 125));
+		h.ajouterChambre(Chambre(i, "Double", 125));
 
 	for (int i = 9; i <= 10; i++)
-		h.ajouterChambre(Chambre(100 + i, "Suite", 210));
+		h.ajouterChambre(Chambre(i, "Suite", 210));
 
 	Client c("Patate", "Millet", "Thomas");
 	std::cout << c << std::endl;
@@ -76,7 +76,7 @@ int main() {
 			break;
 		}
 	}
-
+	
 	if (clientTrouve != nullptr) {
 		std::cout << "\nClient trouvé !" << std::endl;
 		std::cout << *clientTrouve << std::endl;
@@ -91,14 +91,14 @@ int main() {
 		clients.push_back(Client(id, nomClient, prenom));
 	}
 
-	int jour, mois, annee, nuit;
+	int jour = 0, mois = 0, annee = 0, nuit = 0;
 	Date dateDebut;
 	bool dateValide = false;
 
 	while (!dateValide) {
 		std::cout << "Entrez la date de début (jour mois année) : ";
 		std::cin >> jour >> mois >> annee;
-
+	
 		if (dateDebut.is_date(jour, mois, annee)) {
 			dateDebut = Date(jour, mois, annee);
 			dateValide = true;
@@ -108,12 +108,12 @@ int main() {
 			std::cout << "Date invalide ! Veuillez réessayer." << std::endl;
 		}
 	}
-
+	
 	bool nuitsValide = false;
 	while (!nuitsValide) {
 		std::cout << "Entrez le nombre de nuits : ";
 		std::cin >> nuit;
-
+	
 		if (nuit > 0) {
 			nuitsValide = true;
 			std::cout << "Nombre de nuit accepté : " << nuit << std::endl;
@@ -122,5 +122,28 @@ int main() {
 			std::cout << "Le nombre de nuit doit être positif ! Veuillez réessayer." << std::endl;
 		}
 	}
+
+	std::string typeVoulu;
+	std::cout << "Type de chambre (Single / Double / Suite) : ";
+	std::cin >> typeVoulu;
+
+	Chambre* chambreDisponible = nullptr;
+
+	for (Chambre& chambre : h.getChambres()) {
+		if (chambre.getType() == typeVoulu &&
+			!h.chambreOccupe(chambre.getNumero(), dateDebut, nuit, reservations)) {
+			chambreDisponible = &chambre;
+			break;
+		}
+	}
+
+	if (chambreDisponible == nullptr) {
+		std::cout << "Aucune chambre disponible.\n";
+		return 0;
+	}
+
+	std::cout << "Chambre selectionnee : "
+		<< chambreDisponible->getNumero()
+		<< " | " << chambreDisponible->getPrix() << "€/nuit\n";
 
 }

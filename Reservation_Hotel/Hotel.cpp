@@ -39,6 +39,16 @@ void Hotel::supprimerChambre(int numero)
 	}
 }
 
+bool Hotel::chambreOccupe(int numeroChambre, const Date& debut, int nuit, const std::vector<Reservation>& reservations)
+{
+	for (const Reservation& reservation : reservations) {
+		if (reservation.getIdChambre() == numeroChambre) {
+			return true; // déjà réservée
+		}
+	}
+	return false;
+}
+
 std::ostream& operator<<(std::ostream& os, const Hotel& h)
 {
 	os << "Hotel" << h.id_
