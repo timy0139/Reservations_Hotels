@@ -146,4 +146,8 @@ int main() {
 		<< chambreDisponible->getNumero()
 		<< " | " << chambreDisponible->getPrix() << "€/nuit\n";
 
+	double prixTotal = nuit * chambreDisponible->getPrix();
+
+	std::cout << "Prix total du sejour : " << prixTotal << " €\n";
+
 }

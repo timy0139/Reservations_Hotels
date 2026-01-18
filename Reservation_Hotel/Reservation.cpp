@@ -44,7 +44,7 @@ void Reservation::modifierSejour(Date nouvelleDate, int nouvellesNuits)
 	}
 }
 
-int Reservation::calculerMontantTotal(int nbNuits, double prix)
+int Reservation::calculerMontantTotal(int nbNuits, int prix)
 {
 	return nbNuits * prix ;
 }
