@@ -19,3 +19,10 @@ std::string Client::getPrenom() const
 {
 	return prenom_;
 }
+
+std::ostream& operator<<(std::ostream& os, const Client& c)
+{
+	os << "Client" << c.id_
+		<< c.prenom_ << " " << c.nom_;
+	return os;
+}
