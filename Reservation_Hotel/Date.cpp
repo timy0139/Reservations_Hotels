@@ -8,7 +8,7 @@ bool Date::estBissextile(int annee)
 Date::Date(int jour, int mois, int annee)
     : jour_(jour), mois_(mois), annee_(annee)
 {
-    if (!is_date(jour, mois)) {
+    if (!is_date(jour, mois, annee)) {
         throw std::invalid_argument("Invalid date: " + std::to_string(jour) + "/" + std::to_string(mois) + "/" + std::to_string(annee));
     }
 }
@@ -41,7 +41,7 @@ bool Date::operator<=(const Date& other) const {
     return !(other < *this);
 }
 
-bool is_date(int jour, int mois) {
+bool Date::is_date(int jour, int mois, int annee) {
     if ((jour < 1) || (jour > 31)) return false;
     if ((mois < 1) || (mois > 12)) return false;
     if ((mois == 2) && (jour > 28)) return false;

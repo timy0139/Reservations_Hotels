@@ -22,10 +22,10 @@ public:
     bool operator<(const Date& other) const;
     bool operator<=(const Date& other) const;
 
-    
+    bool is_date(int mois, int jour, int annee);
 };
 
-bool is_date(int mois, int jour);
+
 std::string to_string(const Date& d);
 
 #endif 

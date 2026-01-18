@@ -91,4 +91,36 @@ int main() {
 		clients.push_back(Client(id, nomClient, prenom));
 	}
 
+	int jour, mois, annee, nuit;
+	Date dateDebut;
+	bool dateValide = false;
+
+	while (!dateValide) {
+		std::cout << "Entrez la date de début (jour mois année) : ";
+		std::cin >> jour >> mois >> annee;
+
+		if (dateDebut.is_date(jour, mois, annee)) {
+			dateDebut = Date(jour, mois, annee);
+			dateValide = true;
+			std::cout << std::endl;
+		}
+		else {
+			std::cout << "Date invalide ! Veuillez réessayer." << std::endl;
+		}
+	}
+
+	bool nuitsValide = false;
+	while (!nuitsValide) {
+		std::cout << "Entrez le nombre de nuits : ";
+		std::cin >> nuit;
+
+		if (nuit > 0) {
+			nuitsValide = true;
+			std::cout << "Nombre de nuit accepté : " << nuit << std::endl;
+		}
+		else {
+			std::cout << "Le nombre de nuit doit être positif ! Veuillez réessayer." << std::endl;
+		}
+	}
+
 }
