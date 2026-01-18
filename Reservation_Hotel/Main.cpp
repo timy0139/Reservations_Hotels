@@ -57,4 +57,38 @@ int main() {
 	std::cout << c << std::endl;
 
 	std::cout << h << std::endl;
+
+
+	//question7
+	std::vector<Reservation> reservations;
+	std::vector<Client> clients;
+	clients.push_back(Client("dginhac", "Ginhac", "Dominique"));
+	clients.push_back(Client("Patate", "Millet", "Thomas"));
+
+	std::string nomClient;
+	std::cout << "Nom du client : ";
+	std::cin >> nomClient;
+
+	Client* clientTrouve = nullptr;
+	for (size_t i = 0; i < clients.size(); i++) {
+		if (clients[i].getNom() == nomClient) {
+			clientTrouve = &clients[i];
+			break;
+		}
+	}
+
+	if (clientTrouve != nullptr) {
+		std::cout << "\nClient trouvé !" << std::endl;
+		std::cout << *clientTrouve << std::endl;
+	}
+	else {
+		std::cout << "\nClient non trouvé, ajout d'un nouveau client." << std::endl;
+		std::string id, prenom;
+		std::cout << "Entrez l'identifiant : ";
+		std::cin >> id;
+		std::cout << "Entrez le prénom : ";
+		std::cin >> prenom;
+		clients.push_back(Client(id, nomClient, prenom));
+	}
+
 }
