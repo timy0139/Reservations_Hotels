@@ -150,4 +150,10 @@ int main() {
 
 	std::cout << "Prix total du sejour : " << prixTotal << " €\n";
 
+	Reservation reservation1(dateDebut, nuit, h.getId(), 
+		chambreDisponible->getNumero(), clientTrouve->getId(), prixTotal);
+
+	reservations.push_back(reservation1);
+	reservations[reservations.size()-1].afficher();
+
 }

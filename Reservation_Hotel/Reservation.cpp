@@ -49,3 +49,12 @@ int Reservation::calculerMontantTotal(int nbNuits, int prix)
 	return nbNuits * prix ;
 }
 
+void Reservation::afficher()
+{
+	std::cout << "Client: " << idClient_ << std::endl;
+	std::cout << "Hôtel: " << idHotel_ << std::endl;
+	std::cout << "Chambre: " << numeroChambre_ << std::endl;
+	std::cout << "Nombre de nuits: " << nbNuits_ << std::endl;
+	std::cout << "Montant total: " << montantTotal_ << std::endl;
+}
+

@@ -22,4 +22,5 @@ public:
 
     void modifierSejour(Date nouvelleDate, int nouvellesNuits);
     int calculerMontantTotal(int nbNuits, int prix);
+    void afficher();
 };
